@@ -1,0 +1,493 @@
+{
+  "url": "https://coolokey.github.io/dsjh-math/",
+  "branch": "gh-pages",
+  "deployment_commit": "a8bde6e9cc2c0426b5cbfc85286e5c9dc5af68a3",
+  "checks": 94,
+  "all_passed": true,
+  "results": [
+    {
+      "path": "assets/065509a67543f3752782.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/065c1aaede20653ef2e7.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/13527b5b1dded8aef6cc.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/14e3a3cf809691bd7fa1.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/18157e7538419d73b673.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/20ff6ed2e98070694817.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/271c5b82091d96fdf73b.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/27d614cda96f1fe891c2.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/350e82c3f8ada27b866d.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/3b47525190c99b2378ed.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/3d0ba9c5949f884b934f.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/3e8911698310f5bb1c89.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/43676c73824a620c39d3.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/46df86ceb576ef8366db.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/4798af84b0f3c968bca8.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/4c5db4ac9caa9c72d497.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/508308089a3bf8eb0a1a.doc",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/5379455b68258b8eccf8.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/67fcc4edb17927d8ad2d.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/6fd123bd270c3f20bd0f.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/7177068b6acbccb5d7fe.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/741f96d489ec94f70979.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/7603098d1d5b1df46e3d.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/7bf73874295c0ff25143.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/7c044ba91efec559ee89.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/7cc9bc15c3b24d67d3a6.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/83864fca741c0f605aaa.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/8398d9610f7ef4d43a90.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/83a94c3a8695bdf57a86.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/867c99531b608545fd4a.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/87c217bbf801a18752a1.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/885d73e8eb007049af00.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/a10d34501c321bffefb2.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/a1a7bdfb0b078db34779.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/a94c33a2c97c7f855609.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/a96858dfd40343aa721c.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/abb72b384f1dba5cf3f3.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/b3a436a143921ac61163.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/b3e041905455e3ba91ce.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/b54a2c0ac6c54a43a9fb.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/b562c175363ea727f6c9.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/b570d3cfc687878de88c.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/b7776c9189b7d7d24f01.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/b7b81cf6218fb4789036.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/b9b934cc8b27d4cebd1d.jpg",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/c0bd39a1e08726566acd.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/c66a0adf7a4c0a12cb18.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/cecebe9600ba6608ac1e.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/d4e25dea64d9880150a4.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/d530e008e46c4f624d10.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/d8ea093d808a25c7db52.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/dbe4da111c3cdf3845f1.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/e28a23baafa32aa4a1ed.pdf",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "assets/e467eaea3a6c54eeda5a.doc",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "migration.css",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "migration.js",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-101879850848966350.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-131515975225210967.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-180400788921841327.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-180870796834294475.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-224124455142228671.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-250457721228200726.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-259717796982727694.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-280347767837955330.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-333625208684051393.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-371456961889235384.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-374445826133722227.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-401369428963582456.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-411776988129990063.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-437398475864824744.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-445631750403811195.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-474568432232659651.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-478935827538087872.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-495869563631246134.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-575222972148757935.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-662904626415309951.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-669872970757872688.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-673304547724628544.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-676909745795727033.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-749728989818040680.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-767165002183273940.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-768523292535810621.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-780482460204688687.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-812618903815880297.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-836935670277758784.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-879776030298439641.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-900135408234673067.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-911440036309704097.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-948268111455855185.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-950890031291555289.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "page-997364763728082325.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "pages.json",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "theme.css",
+      "status": 200,
+      "matches_local": true
+    }
+  ],
+  "actions_run": "https://github.com/coolokey/dsjh-math/actions/runs/40889116536",
+  "actions_conclusion": "success",
+  "verified_at": "2026-10-29T22:15:00+08:00",
+  "browser_qa": {
+    "mobile_navigation": true,
+    "mobile_horizontal_overflow": false,
+    "calendar_pdf_links": 20,
+    "photo_dialog": true,
+    "sample_photo_pixels": [
+      1066,
+      800
+    ],
+    "console_errors": []
+  }
+}
