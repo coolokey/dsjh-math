@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-10-29T23:12:26+08:00",
+  "content_preservation": "all original text fragments, file links and ordered gallery photos passed",
+  "navigation_items": 36,
+  "galleries": 20,
+  "photos": 1038,
+  "pdf_files": 51,
+  "word_files": 2,
+  "mobile_pages_checked": 36,
+  "mobile_overflow": 0,
+  "interaction_checks": {
+    "mobile_menu_open_close": true,
+    "submenu_aria_matches_visibility": true,
+    "desktop_escape_and_focus": true,
+    "history_expand": true,
+    "pdf_lazy_load": true,
+    "gallery_next_previous": true,
+    "gallery_escape_focus": true
+  },
+  "independent_review": "passed after desktop menu state fix",
+  "asset_changes": false,
+  "publication": "pending"
+}

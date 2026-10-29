@@ -12,8 +12,8 @@ for p in generated:
     if re.search(r'preview_token|\.preview\.editmysite|weebly-link|contenteditable=|javascript:',raw,re.I):errors.append((p['title'],'editor residue'))
     if s.select('input:not([disabled]):not([type="hidden"]),textarea:not([disabled]),select:not([disabled])'):errors.append((p['title'],'active legacy form'))
     if [(a.get_text(),a['href']) for a in s.select('.migration-nav a')]!=[(p['title'],p['file']) for p in generated]:errors.append((p['title'],'navigation order'))
-    for e in s.select('[href],[src]'):
-        u=e.get('href') or e.get('src')
+    for e in s.select('[href],[src],[data-pdf-src]'):
+        u=e.get('href') or e.get('src') or e.get('data-pdf-src')
         if not u or u.startswith(('#','http:','https:','mailto:','tel:','data:','//')):continue
         path=urllib.parse.unquote(urllib.parse.urlsplit(u).path)
         if path.startswith('/') or not (S/path).is_file():errors.append((p['title'],'missing local reference',u))

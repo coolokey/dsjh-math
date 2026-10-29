@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 BASE='https://coolokey.github.io/dsjh-math/'
 pages=json.loads((ROOT/'site/pages.json').read_text(encoding='utf-8'))
-targets={p['file'] for p in pages}|{'theme.css','migration.css','migration.js','pages.json'}
+targets={p['file'] for p in pages}|{'design.css','design.js','pages.json'}
 assets=json.loads((ROOT/'backup/asset-manifest.json').read_text(encoding='utf-8'))
 targets.update(a['path'] for a in assets.values() if a['ok'] and pathlib.Path(a['path']).suffix in ['.pdf','.doc','.docx'])
 photo_page=BeautifulSoup((ROOT/'site/page-259717796982727694.html').read_text(encoding='utf-8'),'html.parser')

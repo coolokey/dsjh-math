@@ -18,6 +18,10 @@
 
 ## 維護與發布
 
+新版採現代學園刊物版面，保留原分類與素材。`scripts/layout.py` 與 `templates/base.html` 產生共用結構，`site/design.css`、`site/design.js` 提供版面與互動；CSS／JS 參照包含內容雜湊版本，避免沿用舊快取。
+
+執行 `python -m unittest discover -s tests -v` 可比對改版前原文、文件連結、照片順序、分類及按需 PDF 預覽。原有素材完整性檢查維持不變。
+
 `site/` 是實際發布內容。原始碼保存在 `main`，以 `git subtree push --prefix site origin gh-pages` 將網站目錄發布到 `gh-pages` 分支；GitHub Pages 從該分支根目錄建置與部署。
 
 `scripts/` 保存素材下載、連結檢查、頁面轉換與完整性驗證程式。Python 需要 requests、beautifulsoup4、Pillow。

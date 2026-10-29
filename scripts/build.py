@@ -1,5 +1,6 @@
 import hashlib,html,json,pathlib,re,urllib.parse
 from bs4 import BeautifulSoup
+from layout import render_layout
 
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 B=ROOT/'backup'; OUT=ROOT/'site'
@@ -161,8 +162,7 @@ for p in pages:
             a=soup.new_tag('a',href=embed['src']);a.string='開啟／下載 PDF';embed.parent.insert_before(a)
     content=str(soup)
     assert 'preview_token' not in content
-    title=p['title']+'｜溪中魔「數」領域網站'
-    doc='<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(title)+'</title><link rel="stylesheet" href="theme.css"><link rel="stylesheet" href="migration.css"><script src="migration.js" defer></script></head><body class="icontent_container">'+content+'<footer class="migration-footer">桃園市立大溪國民中學 ─ 溪中魔『數』領域網站</footer><dialog id="photo-view"><button aria-label="關閉照片">關閉</button><img alt="活動照片原圖"></dialog></body></html>'
+    doc=render_layout(p,soup,pages)
     (OUT/filename(p)).write_text(doc,encoding='utf-8')
     stats.append({'title':p['title'],'id':p['id'],'parent':p['parent'],'file':filename(p),'external':p['external']})
 for old,p in aliases.items():
