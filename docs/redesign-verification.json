@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-29T23:12:26+08:00",
+  "checked_at": "2026-10-30T07:16:14.800280+08:00",
   "content_preservation": "all original text fragments, file links and ordered gallery photos passed",
   "navigation_items": 36,
   "galleries": 20,
@@ -19,5 +19,23 @@
   },
   "independent_review": "passed after desktop menu state fix",
   "asset_changes": false,
-  "publication": "pending"
+  "publication": {
+    "status": "success",
+    "deployment_commit": "c79a6bc828f588418fb74bd2385ca03aaf5ba0a7",
+    "actions_run": "https://github.com/coolokey/dsjh-math/actions/runs/40899346950",
+    "actions_conclusion": "success",
+    "live_checks": 93,
+    "all_passed": true
+  },
+  "live_browser_checks": {
+    "mobile_menu_and_submenu": true,
+    "pdf_initially_deferred_and_loads_on_open": true,
+    "mobile_document_width": 375,
+    "mobile_document_scroll_width": 375,
+    "gallery_next_previous": true,
+    "gallery_escape_focus_restored": true,
+    "homepage_hero_loaded": true,
+    "console_errors": [],
+    "viewport_restored": true
+  }
 }

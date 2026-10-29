@@ -1,8 +1,8 @@
 {
   "url": "https://coolokey.github.io/dsjh-math/",
   "branch": "gh-pages",
-  "deployment_commit": "a8bde6e9cc2c0426b5cbfc85286e5c9dc5af68a3",
-  "checks": 94,
+  "deployment_commit": "c79a6bc828f588418fb74bd2385ca03aaf5ba0a7",
+  "checks": 93,
   "all_passed": true,
   "results": [
     {
@@ -276,17 +276,17 @@
       "matches_local": true
     },
     {
+      "path": "design.css",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "design.js",
+      "status": 200,
+      "matches_local": true
+    },
+    {
       "path": "index.html",
-      "status": 200,
-      "matches_local": true
-    },
-    {
-      "path": "migration.css",
-      "status": 200,
-      "matches_local": true
-    },
-    {
-      "path": "migration.js",
       "status": 200,
       "matches_local": true
     },
@@ -469,25 +469,9 @@
       "path": "pages.json",
       "status": 200,
       "matches_local": true
-    },
-    {
-      "path": "theme.css",
-      "status": 200,
-      "matches_local": true
     }
   ],
-  "actions_run": "https://github.com/coolokey/dsjh-math/actions/runs/40889116536",
-  "actions_conclusion": "success",
-  "verified_at": "2026-10-29T22:15:39+08:00",
-  "browser_qa": {
-    "mobile_navigation": true,
-    "mobile_horizontal_overflow": false,
-    "calendar_pdf_links": 20,
-    "photo_dialog": true,
-    "sample_photo_pixels": [
-      1066,
-      800
-    ],
-    "console_errors": []
-  }
+  "verified_at": "2026-10-30T07:16:14.800280+08:00",
+  "actions_run": "https://github.com/coolokey/dsjh-math/actions/runs/40899346950",
+  "actions_conclusion": "success"
 }
