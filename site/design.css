@@ -15,3 +15,6 @@
 .content-column .document-link{min-height:44px;padding:9px 2px}.content-column a.document-link:has(>img:only-child){display:none}.page-sidebar a{min-height:44px}.viewer-toolbar button{min-height:44px}.viewer-stage button{min-height:48px;min-width:44px}.viewer-stage{grid-template-columns:44px minmax(0,1fr) 44px}
 .home-news .news-date{display:inline-block;vertical-align:baseline;margin-right:8px;padding:1px 7px;background:var(--mint);color:var(--green);font:12px/1.9 Georgia,serif;letter-spacing:.03em}.page-lead{padding-top:24px;padding-bottom:28px}.page-lead .breadcrumbs{margin-bottom:20px}
 .home-news .news-entry:first-child .news-section-title{font:600 24px/1.5 var(--serif);border:0;margin:0;padding:0}.home-news .source-update{font:11px/1.8 var(--sans);color:var(--muted);margin:0;padding:0}@media(max-width:640px){.home-news .source-update{font-size:10px}.home-news .news-entry:first-child .news-section-title{font-size:23px}}
+
+/* New CMS announcements use the same editorial rhythm as archived news. */
+.cms-news{margin:0 0 2rem}.cms-news>ul{padding:0;list-style:none}.cms-news h3{font-size:1.1rem;line-height:1.7;margin:.5rem 0}.cms-news time{display:inline-block}.cms-news .news-entry{padding:1.2rem 0;border-bottom:1px solid var(--line,#d8ded6)}

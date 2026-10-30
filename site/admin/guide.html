@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>後臺操作指南｜溪中魔『數』</title><link rel="stylesheet" href="portal.css"></head>
+<body><main class="portal guide"><a href="./">← 回到管理入口</a><p class="eyebrow">CONTENT STUDIO · GUIDE</p><h1>網站內容管理指南</h1>
+<p class="note">第一次使用前，必須先完成自己的帳號與網站授權。尚未完成時，管理入口會顯示「尚未啟用登入」，不能儲存或發布。</p>
+<h2>一、第一次啟用</h2>
+<ol><li>開啟 <a href="https://turbo.decapcms.org/" target="_blank" rel="noopener noreferrer">Decap Turbo</a>，以自己使用的電子郵件建立帳號；請自行閱讀並接受服務條款。選擇 Free 免費方案，不輸入付款資料，也不開啟付費試用。</li>
+<li>連接 GitHub 時，只授權 <code>coolokey/dsjh-math</code> 這一個儲存庫。GitHub App 會取得管理網站所需權限，請由本人查看並完成授權。不必授權其他儲存庫。</li>
+<li>建立一個網站，儲存庫選 <code>coolokey/dsjh-math</code>，分支選 <code>main</code>。管理入口填 <code>https://coolokey.github.io/dsjh-math/admin/</code>，設定檔路徑填 <code>site/admin/config.yml</code>。</li>
+<li>從網站 Overview 複製 Site ID。它是網站識別碼，不是密碼。交給協助設定者填入設定檔並發布；不用提供密碼、驗證碼或存取金鑰。</li>
+<li>不要邀請其他成員。完成後回到管理入口，使用自己的 Turbo 帳號登入。</li></ol>
+<h2>二、修改原有內容</h2>
+<p>在「領域首頁」或「網頁與分類」找到要修改的頁面。文字編輯區保留原有表格、相片及文件結構，可直接修改文字。進階 HTML 模式供特殊格式使用，日常更新優先使用視覺編輯與新增內容區塊。</p>
+<p>標題可修改，網址使用固定識別碼，不會因改標題而改變。排序數字較小的先出現；上層分類留空代表主選單。第一版維持兩層選單，不能把子頁再設為上層。</p>
+<h2>三、新增頁面與教材</h2>
+<ol><li>在「網頁與分類」選擇新增，填寫標題、上層分類及排序。固定識別碼由系統產生。</li><li>新增文字、圖片、文件、相簿或 YouTube 影片內容區塊。文字可使用編輯工具；圖片與文件欄位可開啟媒體庫上傳檔案。</li><li>上傳後選取檔案，再填說明。影片請使用 YouTube 的分享連結。大型影片維持外部影片服務，不直接上傳至網站。</li><li>先儲存草稿並預覽內容，完成後再發布。內容預覽不等於整個正式網站的完整畫面。</li></ol>
+<h2>四、儲存與發布</h2>
+<p>使用編輯流程中的「儲存草稿」，再依介面將項目設為可發布並選「發布」。名稱可能隨介面翻譯略有差異。儲存只代表資料已保存，仍需發布並等待部署完成。</p>
+<p>在 <a href="https://github.com/coolokey/dsjh-math/actions/workflows/pages.yml" target="_blank" rel="noopener noreferrer">網站發布進度</a> 查看最新執行結果。綠色成功後，再開啟前臺確認；若尚未變更，重新整理頁面。紅色失敗代表驗證或部署未完成，網站維持上一個成功版本，請先修正錯誤再發布。</p>
+<h2>五、隱藏、刪除及還原</h2>
+<p>「隱藏選單項目」只會從導覽移除頁面，知道網址的人仍可讀取，不能用來保護私密資料。刪除前先把子頁移到其他分類，並移除其他頁面指向它的連結。首頁禁止刪除。</p>
+<p>刪除頁面不會順便刪除共用教材或照片。媒體庫刪檔前要確認沒有任何頁面使用，否則建置會攔截失效引用。誤改內容可從 GitHub 的提交紀錄找出修改，再還原該次提交並重新部署；不熟悉時，提供頁面名稱與誤改時間即可協助處理。</p>
+<h2>六、資料與帳號</h2>
+<p>網站儲存庫公開，草稿即使尚未發布，也可能在儲存庫分支或紀錄中被讀取。只上傳可公開的教學資料，不放學生個資、密碼或未公開文件。管理入口可以公開，但修改權限由登入服務與 GitHub 權限控制。</p>
+<p>第一版規劃一個網站、一位使用者的免費方案。服務額度與條款以供應商當時公告為準；不自動加購或升級。</p>
+<div class="portal-links"><a href="./">前往管理入口</a><a href="../index.html">查看正式網站</a></div></main></body></html>

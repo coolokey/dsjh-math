@@ -6,31 +6,30 @@ from bs4 import BeautifulSoup
 
 ROOT=Path(__file__).resolve().parents[1]
 def esc(text):return html.escape(str(text),quote=True)
-def route(page):return 'index.html' if page['parent'] is None and page['title']=='領域首頁' else 'page-'+page['id']+'.html'
+def route(page):return 'index.html' if page['id']=='394608272104688055' else 'page-'+page['id']+'.html'
 
 def navigation(pages,current):
-    out='<nav class="migration-nav" id="site-navigation" aria-label="網站分類"><ul>'
-    for p in pages:
-        if p['parent']:continue
-        active=' aria-current="page"' if p['id']==current['id'] else ''
-        children=[c for c in pages if c['parent']==p['id']]
-        selected=' class="current-group"' if current['parent']==p['id'] else ''
-        out+=f'<li{selected}><div class="nav-label"><a href="{route(p)}"{active}>{esc(p["title"])}</a>'
-        if children:out+=f'<button class="submenu-toggle" aria-label="展開{esc(p["title"])}" aria-controls="nav-{p["id"]}" aria-expanded="false"><span aria-hidden="true">＋</span></button>'
-        out+='</div>'
-        if children:
-            out+=f'<ul id="nav-{p["id"]}">'
-            for c in children:
-                active=' aria-current="page"' if c['id']==current['id'] else ''
-                out+=f'<li><a href="{route(c)}"{active}>{esc(c["title"])}</a></li>'
-            out+='</ul>'
-        out+='</li>'
-    return out+'</ul></nav>'
+    pages=[p for p in pages if not p.get('hidden')]
+    def branch(parent=''):
+        out=''
+        for p in pages:
+            if (p['parent'] or '')!=parent:continue
+            children=[c for c in pages if c['parent']==p['id']]
+            active=' aria-current="page"' if p['id']==current['id'] else ''
+            selected=' class="current-group"' if current['parent']==p['id'] else ''
+            out+=f'<li{selected}><div class="nav-label"><a href="{route(p)}"{active}>{esc(p["title"])}</a>'
+            if children:out+=f'<button class="submenu-toggle" aria-label="展開{esc(p["title"])}" aria-controls="nav-{p["id"]}" aria-expanded="false"><span aria-hidden="true">＋</span></button>'
+            out+='</div>'
+            if children:out+=f'<ul id="nav-{p["id"]}">'+branch(p['id'])+'</ul>'
+            out+='</li>'
+        return out
+    return '<nav class="migration-nav" id="site-navigation" aria-label="網站分類"><ul>'+branch()+'</ul></nav>'
 
 def directory(pages,current,headings):
+    pages=[p for p in pages if not p.get('hidden')]
     parent=next((p for p in pages if p['id']==current['parent']),current)
     siblings=[p for p in pages if p['parent']==parent['id']]
-    if not siblings:siblings=[p for p in pages if p['parent'] is None]
+    if not siblings:siblings=[p for p in pages if not p['parent']]
     out=f'<aside class="page-sidebar"><details class="section-directory" open><summary>瀏覽{esc(parent["title"].replace("▽",""))}<span aria-hidden="true">＋</span></summary><div><ul>'
     for s in siblings:
         active=' class="selected"' if s['id']==current['id'] else ''
@@ -107,9 +106,9 @@ def home_content(content):
     if original_table:original_table.replace_with(container)
     return str(content)
 
-def render_layout(page,soup,pages):
-    content=prepare_content(soup)
-    home=page['title']=='領域首頁'
+def render_layout(page,soup,pages,prepared=False,hero_image=''):
+    content=BeautifulSoup(str(soup),'html.parser') if prepared else prepare_content(soup)
+    home=page['id']=='394608272104688055'
     headings=[]
     for index,h in enumerate(content.select('h2,h3'),1):
         text=h.get_text(' ',strip=True).replace('\ufeff','')
@@ -125,14 +124,16 @@ def render_layout(page,soup,pages):
     quick_ids=['950890031291555289','371456961889235384','911440036309704097','101879850848966350']
     quick=''
     for index,i in enumerate(quick_ids,1):
-        p=next(p for p in pages if p['id']==i)
+        p=next((p for p in pages if p['id']==i and not p.get('hidden')),None)
+        if p is None:continue
         quick+=f'<a href="{route(p)}"><span class="quick-number">0{index}</span><span>{esc(p["title"].replace("▽",""))}</span><span aria-hidden="true">↗</span></a>'
     if home:
         hero_style=(soup.select_one('.wsite-header') or {}).get('style','')
         match=re.search(r'url\([\'"]?([^\)\'"]+)',hero_style)
-        photo=match.group(1) if match else ''
-        lead=f'<section class="home-hero"><div class="hero-copy"><p class="eyebrow">溪中魔『數』・教與學的日常</p><h1>從課堂到生活，<br>發現數學的<span>更多可能。</span></h1><p class="hero-description">教學資源、共學足跡與活動紀錄，<br>一起探索屬於溪中的數學風景。</p><a class="text-link" href="page-911440036309704097.html">走進魔方花絮 <span aria-hidden="true">↗</span></a></div><figure class="hero-photo"><img src="{esc(photo)}" alt="大溪國中校園中的彩色魔術方塊" fetchpriority="high"><figcaption>一顆魔方，開啟對數學的好奇。</figcaption><span class="photo-corner" aria-hidden="true">＋</span></figure></section><div class="quick-resources" aria-label="常用資料">{quick}</div>'
-        body='<div class="content-column home-content">'+home_content(content)+'</div>'
+        photo=hero_image or (match.group(1) if match else '')
+        cube_link='<a class="text-link" href="page-911440036309704097.html">走進魔方花絮 <span aria-hidden="true">↗</span></a>' if any(p['id']=='911440036309704097' and not p.get('hidden') for p in pages) else ''
+        lead=f'<section class="home-hero"><div class="hero-copy"><p class="eyebrow">溪中魔『數』・教與學的日常</p><h1>從課堂到生活，<br>發現數學的<span>更多可能。</span></h1><p class="hero-description">教學資源、共學足跡與活動紀錄，<br>一起探索屬於溪中的數學風景。</p>{cube_link}</div><figure class="hero-photo"><img src="{esc(photo)}" alt="大溪國中校園中的彩色魔術方塊" fetchpriority="high"><figcaption>一顆魔方，開啟對數學的好奇。</figcaption><span class="photo-corner" aria-hidden="true">＋</span></figure></section><div class="quick-resources" aria-label="常用資料">{quick}</div>'
+        body='<div class="content-column home-content">'+(str(content) if prepared else home_content(content))+'</div>'
     else:
         lead=''
         body=f'<header class="page-lead"><div class="breadcrumbs" aria-label="目前位置">{crumbs}</div><p class="eyebrow">{esc(parent["title"].replace("▽","")) if parent else "溪中數學・教學與生活"}</p><h1>{esc(page["title"].replace("▽",""))}</h1></header><div class="page-grid">{directory(pages,page,headings)}<article class="content-column" data-page-title="{esc(page["title"])}">{content}</article></div>'

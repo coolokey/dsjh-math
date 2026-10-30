@@ -1,0 +1,20 @@
+{
+  "checked_at": "2026-10-30T10:26:53.391887+08:00",
+  "status": "implementation_verified_account_setup_pending",
+  "python_tests": 11,
+  "node_tests": 8,
+  "pages_preserved": 36,
+  "aliases_preserved": 42,
+  "original_assets_changed": false,
+  "local_browser": {
+    "full_decap_config_loaded": true,
+    "in_memory_test_backend_only": true,
+    "edit_table_retains_image_and_document": true,
+    "in_memory_save": true,
+    "portal_mobile_width": 375,
+    "portal_mobile_scroll_width": 375
+  },
+  "review": "passed after preview update fix",
+  "production_auth_save_upload_publish": "pending owner registration and GitHub App authorization",
+  "publication": "pending"
+}

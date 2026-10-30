@@ -1,0 +1,117 @@
+# 取得本人註冊的 Decap Turbo 網站 UUID 後，才填入 turbo_site_id。
+# 空白時 admin/index.html 會停止載入 CMS，不提供可寫入的公開示範後臺。
+backend:
+  name: turbo-github
+  repo: coolokey/dsjh-math
+  branch: main
+  turbo_site_id: ""
+publish_mode: editorial_workflow
+locale: zh_Hant
+site_url: https://coolokey.github.io/dsjh-math/
+display_url: https://coolokey.github.io/dsjh-math/
+media_folder: site/assets/uploads
+public_folder: /dsjh-math/assets/uploads
+collections:
+  - name: home
+    label: 首頁
+    delete: false
+    files:
+      - name: home
+        label: 首頁內容
+        file: content/home.json
+        fields:
+          - {name: id, label: 固定識別碼, widget: dsjh-stable-id, default: "394608272104688055"}
+          - {name: title, label: 網頁標題, widget: string}
+          - {name: parent, label: 上層分類, widget: hidden, default: "", required: false}
+          - {name: order, label: 排序, widget: number, value_type: int, default: 0}
+          - {name: hidden, label: 不列入導覽, widget: hidden, default: false}
+          - {name: external, label: 原外部連結頁面, widget: boolean, default: false, hint: 外部網址於內文修改，本欄不改變網址。}
+          - {name: hero_image, label: 首頁主視覺, widget: image, required: true}
+          - name: news
+            label: 新增公告
+            widget: list
+            required: false
+            default: []
+            fields:
+              - {name: date, label: 公告日期, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD}
+              - {name: title, label: 公告標題, widget: string}
+              - {name: text, label: 公告內容, widget: markdown, required: false, default: ""}
+              - {name: link, label: 公告連結, widget: string, required: false, default: ""}
+          - &html_body
+            name: body
+            label: 原有網頁內容
+            widget: dsjh-html
+            required: false
+            default: ""
+          - &content_blocks
+            name: blocks
+            label: 新增內容區塊
+            widget: list
+            required: false
+            default: []
+            types:
+              - name: text
+                label: 文字
+                widget: object
+                fields:
+                  - {name: text, label: 文字內容, widget: markdown}
+              - name: image
+                label: 圖片
+                widget: object
+                fields:
+                  - {name: file, label: 圖片檔案, widget: image}
+                  - {name: caption, label: 圖片說明, widget: string, required: false, default: ""}
+              - name: document
+                label: 文件
+                widget: object
+                fields:
+                  - {name: file, label: 文件檔案, widget: file}
+                  - {name: caption, label: 文件說明, widget: string, required: false, default: ""}
+              - name: gallery
+                label: 相簿
+                widget: object
+                fields:
+                  - name: images
+                    label: 相片（可拖曳排序）
+                    widget: list
+                    fields:
+                      - {name: file, label: 相片, widget: image}
+                      - {name: caption, label: 相片說明, widget: string, required: false, default: ""}
+              - name: video
+                label: YouTube 影片
+                widget: object
+                fields:
+                  - name: url
+                    label: YouTube 網址
+                    widget: string
+                    pattern: ['^https://(www\.)?(youtube\.com/watch\?v=|youtu\.be/)[A-Za-z0-9_-]{11}([?&].*)?$', '請填入 YouTube 的 https://www.youtube.com/watch?v=影片代碼 或 https://youtu.be/影片代碼 網址。']
+  - name: pages
+    label: 網頁與分類
+    label_singular: 網頁
+    folder: content/pages
+    create: true
+    delete: true
+    extension: json
+    format: json
+    identifier_field: id
+    slug: '{{slug}}'
+    summary: '{{title}}（{{id}}）'
+    sortable_fields: [order, title]
+    fields:
+      - {name: id, label: 固定識別碼, widget: dsjh-stable-id, hint: 新增時自動產生。修改標題不會改變網址。}
+      - {name: title, label: 網頁標題, widget: string}
+      - name: parent
+        label: 上層分類
+        widget: relation
+        collection: pages
+        search_fields: [title, id]
+        display_fields: [title]
+        value_field: id
+        required: false
+        default: ""
+        hint: 留白為最上層。發布時會檢查不存在的上層與循環分類。
+      - {name: order, label: 排序, widget: number, value_type: int, default: 0, hint: 數字愈小愈前面。}
+      - {name: hidden, label: 不列入導覽, widget: boolean, default: false, hint: 隱藏後仍可透過原網址閱讀，請勿存放機密資料。}
+      - {name: external, label: 原外部連結頁面, widget: boolean, default: false, hint: 外部網址於內文修改，本欄不改變網址。}
+      - *html_body
+      - *content_blocks
