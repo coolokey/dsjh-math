@@ -29,3 +29,7 @@ tests/test_redesign.py 與 tests/baseline.json 是搬移完整性基準，只適
 - https://decapcms.org/docs/turbo-connecting-a-site/
 - https://decapcms.org/docs/editorial-workflows/
 - https://decapcms.org/docs/custom-widgets/
+
+## 已完成帳號串接
+
+已由擁有者完成 GitHub App 授權，網站 ID 為 e30ca8f1-3cdf-47cd-9f4c-e2fb703957af。Turbo-side scope 額外限定 coolokey/dsjh-math；成員檢視只有擁有者一人。正式登入與圖片、PDF 草稿儲存已實測通過。發布完整驗收結果請見 docs/cms-account-verification.json。

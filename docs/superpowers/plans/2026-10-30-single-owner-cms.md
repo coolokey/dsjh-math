@@ -33,7 +33,7 @@
 - [x] config.yml 暫存可讀的未啟用設定標示，取得實際 site UUID 後才啟用；不寫假的帳號／金鑰。
 - [x] .github/workflows/pages.yml：push main、PR 驗證、手動執行，安裝鎖定 Python 依賴，建置、內容驗證；成功才部署 site/。PR 不公開部署。最小權限，部署限 main。
 - [x] 中文操作指南涵蓋註冊授權、config path、草稿公開性、上傳／編輯／發布／還原及 Actions 狀態。
-- [ ] 整體複核與本機畫面 QA 後推送 main，切換 Pages source 至 workflow，等待部署並驗證正式網頁及 admin；帳號授權交由使用者親自完成，後續實測登入及儲存發布才能稱完成。
+- [x] 整體複核與本機畫面 QA 後推送 main，切換 Pages source 至 workflow，等待部署並驗證正式網頁及 admin；帳號授權交由使用者親自完成，後續實測登入及儲存發布才能稱完成。
 
 ## Rulings
 
@@ -50,3 +50,7 @@
 - Ruling：線上 HTML 比對發現 Windows CRLF 與 Linux LF 導致樣式版本碼不同；統一雜湊換行並新增 portability 測試，保留真實位元組比對標準。
 
 - 正式部署 17a6f8c，Actions 40992120791 成功，線上 100 項位元組檢查全部通過；正式管理入口與指南、原首頁圖均經 CUA 驗證。本人註冊／授權及真實帳號發布驗收仍待完成。
+
+## 帳號啟用與正式驗收
+
+擁有者已完成 GitHub App 授權。Turbo 免費單人網站已建立並啟用；正式登入、真實草稿與圖片／PDF 上傳通過。測試草稿 PR #1 建置通過，原生發布確認使工具停住，改以 GitHub CLI 合併並實證測試頁及附件上線；使用者隨後回覆已確認原生發布視窗。測試頁與附件已移除，原 36 頁保留基準通過；最後清理部署與線上檢查另見 cms-account-verification.json。

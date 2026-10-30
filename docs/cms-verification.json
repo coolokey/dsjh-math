@@ -1,6 +1,6 @@
 {
-  "checked_at": "2026-10-30T10:32:40.889481+08:00",
-  "status": "implementation_verified_account_setup_pending",
+  "checked_at": "2026-10-30T14:53:22.481049+08:00",
+  "status": "operational_owner_enabled",
   "python_tests": 12,
   "node_tests": 8,
   "pages_preserved": 36,
@@ -15,7 +15,7 @@
     "portal_mobile_scroll_width": 375
   },
   "review": "passed after preview update fix",
-  "production_auth_save_upload_publish": "pending owner registration and GitHub App authorization",
+  "production_auth_save_upload_publish": "Owner login, real draft, image and PDF upload passed. Test deployed via GitHub PR merge; native CMS publish dialog was confirmed by user after automation blocked.",
   "publication": {
     "status": "success",
     "commit": "17a6f8cce4360443e903a2f1f97d0803aba18b60",
@@ -30,5 +30,10 @@
     "homepage_hero_loaded": true,
     "console_errors": []
   },
-  "portability_fix": "Normalize CRLF/LF before asset hash; regression test passes"
+  "portability_fix": "Normalize CRLF/LF before asset hash; regression test passes",
+  "site_id": "e30ca8f1-3cdf-47cd-9f4c-e2fb703957af",
+  "owner_count": 1,
+  "repo_scope": [
+    "coolokey/dsjh-math"
+  ]
 }

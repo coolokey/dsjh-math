@@ -2,7 +2,7 @@
   "url": "https://coolokey.github.io/dsjh-math/",
   "branch": "main",
   "deployment": "GitHub Actions",
-  "deployment_commit": "17a6f8cce4360443e903a2f1f97d0803aba18b60",
+  "deployment_commit": "fc0ce2a06c720dccce0e0b31ceb47ac3c3b4e3e4",
   "checks": 100,
   "all_passed": true,
   "results": [
@@ -506,8 +506,5 @@
       "status": 200,
       "matches_local": true
     }
-  ],
-  "verified_at": "2026-10-30T10:32:40.889481+08:00",
-  "actions_run": "https://github.com/coolokey/dsjh-math/actions/runs/40992120791",
-  "actions_conclusion": "success"
+  ]
 }

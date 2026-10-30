@@ -1,0 +1,31 @@
+{
+  "site_id": "e30ca8f1-3cdf-47cd-9f4c-e2fb703957af",
+  "single_owner_verified": true,
+  "turbo_repo_scope": [
+    "coolokey/dsjh-math"
+  ],
+  "production_login": true,
+  "real_draft_saved": true,
+  "image_and_pdf_uploaded": true,
+  "draft_pr": "https://github.com/coolokey/dsjh-math/pull/1",
+  "draft_build": "passed",
+  "publish": "success",
+  "cleanup": "test source page and two uploaded fixture files removed; final deployment pending",
+  "published_test": {
+    "page_status": 200,
+    "test_text_present": true,
+    "hidden_from_navigation": true,
+    "cms-test-document.pdf": {
+      "status": 200,
+      "matches_upload": true
+    },
+    "cms-test-image.png": {
+      "status": 200,
+      "matches_upload": true
+    }
+  },
+  "publish_method": "CMS draft and ready state; GitHub CLI merged PR while native browser confirmation blocked automation. User later confirmed native dialog.",
+  "publish_run": "https://github.com/coolokey/dsjh-math/actions/runs/41016482621",
+  "checked_at": "2026-10-30T14:53:22.481049+08:00",
+  "original_content_restored": "36 pages; all four original preservation tests passed"
+}
