@@ -18,3 +18,6 @@
 
 /* New CMS announcements use the same editorial rhythm as archived news. */
 .cms-news{margin:0 0 2rem}.cms-news>ul{padding:0;list-style:none}.cms-news h3{font-size:1.1rem;line-height:1.7;margin:.5rem 0}.cms-news time{display:inline-block}.cms-news .news-entry{padding:1.2rem 0;border-bottom:1px solid var(--line,#d8ded6)}
+
+/* CMS announcements share the original dated-news list below its heading. */
+.home-news .cms-news-entry{font-size:15px;line-height:1.9}.home-news .cms-news-entry h3{display:inline;font:inherit;color:inherit;margin:0;padding:0;border:0}

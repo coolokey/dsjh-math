@@ -15,8 +15,15 @@ def build(content_root=None,out=None,asset_root=None):
         markup=blocks+'\n'+p['body'] if p.get('blocks_position','after')=='before' else p['body']+'\n'+blocks
         soup=BeautifulSoup(markup,'html.parser')
         if p['id']=='394608272104688055' and p.get('news'):
-            target=soup.select_one('.home-news') or soup
-            target.insert(0,BeautifulSoup(render_news(p['news']),'html.parser'))
+            news=BeautifulSoup(render_news(p['news']),'html.parser')
+            listing=soup.select_one('.home-news > ul')
+            heading=listing.find('li',recursive=False) if listing else None
+            if heading:
+                for row in reversed(news.select('.cms-news > ul > li')):
+                    heading.insert_after(row.extract())
+            else:
+                target=soup.select_one('.home-news') or soup
+                target.insert(0,news)
         generated[route(p)]=render_layout(p,soup,pages,prepared=True,hero_image=p.get('hero_image','').removeprefix('/dsjh-math/'))
     byid={p['id']:p for p in pages}
     for name,id in aliases.items():

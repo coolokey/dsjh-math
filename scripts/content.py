@@ -132,7 +132,7 @@ def render_news(news,asset_root=None,routes=None):
     result=[]
     for item in news:
         if not isinstance(item,dict) or not isinstance(item.get('title'),str) or not item['title'].strip():fail('News title is required')
-        try:datetime.date.fromisoformat(item.get('date',''))
+        try:parsed_date=datetime.date.fromisoformat(item.get('date',''))
         except (TypeError,ValueError):fail('News date must use YYYY-MM-DD')
         text=item.get('text','');link=item.get('link','')
         if not isinstance(text,str) or not isinstance(link,str):fail('News fields must be text')
@@ -141,5 +141,6 @@ def render_news(news,asset_root=None,routes=None):
             validate_html(body,asset_root,routes)
             safe_url(link,asset_root,routes)
         if link:title=f'<a href="{html.escape(normalize_url(link),quote=True)}">{title}</a>'
-        result.append(f'<li class="news-entry"><time class="news-date" datetime="{date}">{date}</time><h3>{title}</h3>{body}</li>')
+        date_label=f'{parsed_date.year-1911:03d}{parsed_date.month:02d}{parsed_date.day:02d}' if parsed_date.year>=1912 else date
+        result.append(f'<li class="news-entry cms-news-entry"><time class="news-date" datetime="{date}">{date_label}</time><h3>{title}</h3>{body}</li>')
     return '<section class="cms-news" aria-label="新公告"><ul>'+''.join(result)+'</ul></section>' if result else ''
