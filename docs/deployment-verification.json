@@ -1,10 +1,46 @@
 {
   "url": "https://coolokey.github.io/dsjh-math/",
-  "branch": "gh-pages",
-  "deployment_commit": "c79a6bc828f588418fb74bd2385ca03aaf5ba0a7",
-  "checks": 93,
+  "branch": "main",
+  "deployment": "GitHub Actions",
+  "deployment_commit": "17a6f8cce4360443e903a2f1f97d0803aba18b60",
+  "checks": 100,
   "all_passed": true,
   "results": [
+    {
+      "path": "admin/bootstrap.js",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "admin/config.yml",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "admin/editor.css",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "admin/editor.js",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "admin/guide.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "admin/index.html",
+      "status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "admin/portal.css",
+      "status": 200,
+      "matches_local": true
+    },
     {
       "path": "assets/065509a67543f3752782.pdf",
       "status": 200,
@@ -471,7 +507,7 @@
       "matches_local": true
     }
   ],
-  "verified_at": "2026-10-30T07:16:14.800280+08:00",
-  "actions_run": "https://github.com/coolokey/dsjh-math/actions/runs/40899346950",
+  "verified_at": "2026-10-30T10:32:40.889481+08:00",
+  "actions_run": "https://github.com/coolokey/dsjh-math/actions/runs/40992120791",
   "actions_conclusion": "success"
 }

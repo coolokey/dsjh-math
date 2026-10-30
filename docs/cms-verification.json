@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-10-30T10:26:53.391887+08:00",
+  "checked_at": "2026-10-30T10:32:40.889481+08:00",
   "status": "implementation_verified_account_setup_pending",
-  "python_tests": 11,
+  "python_tests": 12,
   "node_tests": 8,
   "pages_preserved": 36,
   "aliases_preserved": 42,
@@ -16,5 +16,19 @@
   },
   "review": "passed after preview update fix",
   "production_auth_save_upload_publish": "pending owner registration and GitHub App authorization",
-  "publication": "pending"
+  "publication": {
+    "status": "success",
+    "commit": "17a6f8cce4360443e903a2f1f97d0803aba18b60",
+    "run": "https://github.com/coolokey/dsjh-math/actions/runs/40992120791",
+    "live_checks": 100,
+    "all_passed": true,
+    "pages_build_type": "workflow"
+  },
+  "live_browser": {
+    "admin_pending_setup_message": true,
+    "guide_opened": true,
+    "homepage_hero_loaded": true,
+    "console_errors": []
+  },
+  "portability_fix": "Normalize CRLF/LF before asset hash; regression test passes"
 }
