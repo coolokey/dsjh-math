@@ -19,6 +19,14 @@ class ContentTests(unittest.TestCase):
     def write_page(self,id='test-page',**kwargs):
         data=dict(id=id,title='測試頁',parent='',order=999,hidden=False,external=False,body='<p>測試內容</p>',blocks=[])
         data.update(kwargs);p=self.root/'content/pages'/f'{id}.json';p.parent.mkdir(exist_ok=True);p.write_text(json.dumps(data),encoding='utf-8');return p
+    def test_new_blocks_can_be_placed_before_or_after_existing_content(self):
+        for position in ('before','after'):
+            self.write_page(body='<p>OLD_CONTENT</p>',blocks_position=position,blocks=[dict(type='text',text='NEW_CONTENT')])
+            build(self.root/'content',self.root/'site',asset_root=self.assets)
+            text=BeautifulSoup((self.root/'site/page-test-page.html').read_text(encoding='utf-8'),'html.parser').select_one('article').get_text()
+            self.assertEqual(text.index('NEW_CONTENT')<text.index('OLD_CONTENT'),position=='before')
+        self.write_page(blocks_position='invalid')
+        with self.assertRaises(ContentError):load_content(self.root/'content',self.assets)
     def test_independent_build_and_edit_hide_delete_restore(self):
         self.assertIsNotNone(build,'formal content builder is missing')
         page=self.write_page(parent=None);out=self.root/'site';build(self.root/'content',out,asset_root=self.assets)

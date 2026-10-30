@@ -11,7 +11,9 @@ def build(content_root=None,out=None,asset_root=None):
     # Validate all source before changing any generated output.
     generated={}
     for p in pages:
-        soup=BeautifulSoup(p['body']+'\n'+render_blocks(p['blocks']),'html.parser')
+        blocks=render_blocks(p['blocks'])
+        markup=blocks+'\n'+p['body'] if p.get('blocks_position','after')=='before' else p['body']+'\n'+blocks
+        soup=BeautifulSoup(markup,'html.parser')
         if p['id']=='394608272104688055' and p.get('news'):
             target=soup.select_one('.home-news') or soup
             target.insert(0,BeautifulSoup(render_news(p['news']),'html.parser'))

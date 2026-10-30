@@ -114,4 +114,12 @@ collections:
       - {name: hidden, label: 不列入導覽, widget: boolean, default: false, hint: 隱藏後仍可透過原網址閱讀，請勿存放機密資料。}
       - {name: external, label: 原外部連結頁面, widget: boolean, default: false, hint: 外部網址於內文修改，本欄不改變網址。}
       - *html_body
+      - name: blocks_position
+        label: 新增內容位置
+        widget: select
+        default: after
+        options:
+          - {label: 放在原有內容上方, value: before}
+          - {label: 放在原有內容下方, value: after}
+        hint: 最新行事曆或教材可選上方；區塊之間可拖曳調整順序。
       - *content_blocks

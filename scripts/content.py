@@ -86,6 +86,7 @@ def load_content(content_root,asset_root):
         if id in byid:fail('Duplicate page ID: '+id)
         if not isinstance(p['title'],str) or not p['title'].strip():fail('Title is required')
         if not isinstance(p['body'],str):fail('body must be HTML text')
+        if p.get('blocks_position','after') not in ('before','after'):fail('Invalid content block position')
         if not isinstance(p['parent'],str) or type(p['order']) is not int or type(p['hidden']) is not bool or type(p['external']) is not bool or not isinstance(p['blocks'],list):fail('Invalid page metadata')
         byid[id]=p
     for p in pages:
