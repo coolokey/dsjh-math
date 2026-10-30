@@ -10,7 +10,7 @@
   "draft_pr": "https://github.com/coolokey/dsjh-math/pull/1",
   "draft_build": "passed",
   "publish": "success",
-  "cleanup": "test source page and two uploaded fixture files removed; final deployment pending",
+  "cleanup": "success: test page and both uploaded files removed, all return HTTP 404",
   "published_test": {
     "page_status": 200,
     "test_text_present": true,
@@ -26,6 +26,12 @@
   },
   "publish_method": "CMS draft and ready state; GitHub CLI merged PR while native browser confirmation blocked automation. User later confirmed native dialog.",
   "publish_run": "https://github.com/coolokey/dsjh-math/actions/runs/41016482621",
-  "checked_at": "2026-10-30T14:53:22.481049+08:00",
-  "original_content_restored": "36 pages; all four original preservation tests passed"
+  "checked_at": "2026-10-30T14:55:24.304340+08:00",
+  "original_content_restored": "36 pages; all four original preservation tests passed",
+  "cleanup_http": {
+    "page-17933320288151058567316.html": 404,
+    "assets/uploads/cms-test-document.pdf": 404,
+    "assets/uploads/cms-test-image.png": 404
+  },
+  "cleanup_deploy": "https://github.com/coolokey/dsjh-math/actions/runs/41016814664"
 }
