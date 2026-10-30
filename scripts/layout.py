@@ -5,6 +5,11 @@ from string import Template
 from bs4 import BeautifulSoup
 
 ROOT=Path(__file__).resolve().parents[1]
+
+def asset_version(path):
+    """Git checks out text with platform line endings; versions must stay portable."""
+    return hashlib.sha256(path.read_bytes().replace(b'\r\n',b'\n')).hexdigest()[:12]
+
 def esc(text):return html.escape(str(text),quote=True)
 def route(page):return 'index.html' if page['id']=='394608272104688055' else 'page-'+page['id']+'.html'
 
@@ -138,5 +143,5 @@ def render_layout(page,soup,pages,prepared=False,hero_image=''):
         lead=''
         body=f'<header class="page-lead"><div class="breadcrumbs" aria-label="目前位置">{crumbs}</div><p class="eyebrow">{esc(parent["title"].replace("▽","")) if parent else "溪中數學・教學與生活"}</p><h1>{esc(page["title"].replace("▽",""))}</h1></header><div class="page-grid">{directory(pages,page,headings)}<article class="content-column" data-page-title="{esc(page["title"])}">{content}</article></div>'
     shell=Template((ROOT/'templates/base.html').read_text(encoding='utf-8'))
-    versions={name:hashlib.sha256((ROOT/'site'/name).read_bytes()).hexdigest()[:12] for name in ['design.css','design.js']}
+    versions={name:asset_version(ROOT/'site'/name) for name in ['design.css','design.js']}
     return shell.substitute(title=esc(page['title'])+'｜溪中魔「數」領域網站',body_class='home-page' if home else 'inner-page',navigation=navigation(pages,page),lead=lead,body=body,css_url='design.css?v='+versions['design.css'],js_url='design.js?v='+versions['design.js'])
