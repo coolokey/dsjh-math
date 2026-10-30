@@ -4,7 +4,7 @@ backend:
   name: turbo-github
   repo: coolokey/dsjh-math
   branch: main
-  turbo_site_id: ""
+  turbo_site_id: "e30ca8f1-3cdf-47cd-9f4c-e2fb703957af"
 publish_mode: editorial_workflow
 locale: zh_Hant
 site_url: https://coolokey.github.io/dsjh-math/
