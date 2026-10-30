@@ -52,7 +52,12 @@ def render_blocks(blocks):
         kind=b.get('type');cap=html.escape(b.get('caption',''));file=html.escape(normalize_url(b.get('file','')),quote=True)
         if kind=='text':result.append(markdown.markdown(b.get('text',''),extensions=['tables','fenced_code']).replace('/dsjh-math/assets/','assets/'))
         elif kind=='image':result.append(f'<figure><img src="{file}" alt="{cap}" loading="lazy"><figcaption>{cap}</figcaption></figure>')
-        elif kind=='document':result.append(f'<p><a class="document-link" href="{file}" target="_blank" rel="noopener">{cap or "開啟／下載文件"}</a></p>')
+        elif kind=='document':
+            document=f'<p><a class="document-link" href="{file}" target="_blank" rel="noopener">{cap or "開啟／下載文件"}</a></p>'
+            path=normalize_url(b.get('file',''))
+            if path.startswith('assets/') and urllib.parse.urlsplit(path).path.lower().endswith('.pdf'):
+                document+=f'<details class="pdf-preview" aria-label="PDF 文件預覽"><summary>展開文件預覽</summary><embed type="application/pdf" data-pdf-src="{file}"></details>'
+            result.append(document)
         elif kind=='gallery':
             images=[]
             for i,im in enumerate(b.get('images',[]),1):

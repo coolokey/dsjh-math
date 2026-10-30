@@ -3,13 +3,26 @@ from bs4 import BeautifulSoup
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
 try:
-    from content import load_content, ContentError
+    from content import load_content, ContentError, render_blocks
     from build import build
 except ImportError:
     load_content=build=None
     class ContentError(ValueError):pass
 
 class ContentTests(unittest.TestCase):
+    def test_uploaded_pdf_blocks_have_deferred_preview_and_download(self):
+        file='/dsjh-math/assets/uploads/calendar.PDF'
+        soup=BeautifulSoup(render_blocks([dict(type='document',file=file,caption='下載新行事曆')]),'html.parser')
+        self.assertEqual(soup.select_one('a.document-link')['href'],'assets/uploads/calendar.PDF')
+        details=soup.select_one('details.pdf-preview')
+        self.assertIsNotNone(details)
+        self.assertFalse(details.has_attr('open'))
+        self.assertEqual(details.summary.get_text(),'展開文件預覽')
+        self.assertEqual(details.embed['data-pdf-src'],'assets/uploads/calendar.PDF')
+        self.assertFalse(details.embed.has_attr('src'))
+        for other in ('assets/lesson.docx','https://example.com/calendar.pdf'):
+            self.assertNotIn('<embed',render_blocks([dict(type='document',file=other)]))
+
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory(dir=ROOT);self.addCleanup(self.tmp.cleanup)
         self.root=pathlib.Path(self.tmp.name)
